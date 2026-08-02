@@ -1,0 +1,118 @@
+/* portfolio-website — custom styles beyond Tailwind utilities */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  color-scheme: light;
+}
+html.dark {
+  color-scheme: dark;
+}
+
+* {
+  scrollbar-width: thin;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+.font-display {
+  font-family: 'Fraunces', serif;
+}
+
+/* Reveal-on-scroll: JS adds .is-visible when the element enters the viewport */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Timeline connector */
+.timeline-item {
+  position: relative;
+  padding-left: 2rem;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.4rem;
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 999px;
+  background: var(--tw-accent, #c9962f);
+  background: rgb(201 150 47);
+}
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  left: 0.3rem;
+  top: 1.1rem;
+  bottom: -1.75rem;
+  width: 1px;
+  background: currentColor;
+  opacity: 0.15;
+}
+.timeline-item:last-child::after {
+  display: none;
+}
+
+/* Mobile menu */
+#mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+#mobile-menu.open {
+  max-height: 24rem;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  z-index: 100;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+/* Form validation state */
+.field-error {
+  display: none;
+}
+.field-invalid .field-error {
+  display: block;
+}
+.field-invalid input,
+.field-invalid textarea {
+  border-color: rgb(190 60 50) !important;
+}
+
+/* Project filter buttons */
+.filter-btn[aria-pressed="true"] {
+  background: rgb(201 150 47);
+  color: #1b1810;
+}

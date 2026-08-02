@@ -1,0 +1,840 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wil Lorenz Dagli — Software Engineer</title>
+    <meta
+      name="description"
+      content="Portfolio of Wil Lorenz Dagli, a software engineer focused on backend development, DevOps, and observability."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              paper: { DEFAULT: "#f7f4ee", dark: "#14120d" },
+              ink: { DEFAULT: "#1b1810", dark: "#f2ede2" },
+              accent: {
+                50: "#fbf3e2",
+                100: "#f6e6c0",
+                200: "#eccf88",
+                300: "#e2b656",
+                400: "#d6a03e",
+                500: "#c9962f",
+                600: "#a97a1f",
+                700: "#835f18",
+                800: "#5e4512",
+                900: "#3d2d0c",
+              },
+            },
+            fontFamily: {
+              display: ["Fraunces", "serif"],
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body
+    class="bg-paper dark:bg-paper-dark text-ink dark:text-ink-dark font-sans antialiased transition-colors"
+  >
+    <a
+      href="#main"
+      class="skip-link bg-accent-500 text-ink px-4 py-2 rounded-md font-medium"
+      >Skip to main content</a
+    >
+
+    <header
+      class="border-b border-ink/10 dark:border-ink-dark/10 sticky top-0 z-40 bg-paper/90 dark:bg-paper-dark/90 backdrop-blur"
+    >
+      <div
+        class="max-w-6xl mx-auto px-6 flex items-center justify-between h-18 py-4"
+      >
+        <a
+          href="index.html"
+          class="font-display text-xl font-semibold tracking-tight"
+          >Wil Lorenz Dagli</a
+        >
+
+        <nav class="hidden md:flex items-center gap-8" aria-label="Primary">
+          <a
+            data-nav-link
+            href="index.html"
+            class="text-sm font-medium hover:text-accent-600 dark:hover:text-accent-400 transition-colors"
+            >Home</a
+          >
+          <a
+            data-nav-link
+            href="projects.html"
+            class="text-sm font-medium hover:text-accent-600 dark:hover:text-accent-400 transition-colors"
+            >Work</a
+          >
+          <a
+            data-nav-link
+            href="contact.html"
+            class="text-sm font-medium hover:text-accent-600 dark:hover:text-accent-400 transition-colors"
+            >Contact</a
+          >
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button
+            data-theme-toggle
+            type="button"
+            aria-pressed="false"
+            class="p-2 rounded-full hover:bg-ink/5 dark:hover:bg-ink-dark/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-500 focus-visible:outline-offset-2 transition-colors"
+          >
+            <svg
+              class="w-5 h-5 dark:hidden"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+              />
+            </svg>
+            <svg
+              class="w-5 h-5 hidden dark:block"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="4" stroke-width="2" />
+              <path
+                stroke-linecap="round"
+                stroke-width="2"
+                d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41"
+              />
+            </svg>
+          </button>
+          <button
+            id="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            class="md:hidden p-2 rounded-md hover:bg-ink/5 dark:hover:bg-ink-dark/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-500 focus-visible:outline-offset-2"
+          >
+            <span class="sr-only">Toggle menu</span>
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <nav id="mobile-menu" class="md:hidden" aria-label="Mobile">
+        <div class="px-6 pb-4 flex flex-col gap-3">
+          <a data-nav-link href="index.html" class="text-sm font-medium py-1"
+            >Home</a
+          >
+          <a data-nav-link href="projects.html" class="text-sm font-medium py-1"
+            >Work</a
+          >
+          <a data-nav-link href="contact.html" class="text-sm font-medium py-1"
+            >Contact</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section
+        class="border-b border-ink/10 dark:border-ink-dark/10 max-w-7xl mx-auto px-6 pt-24 pb-24 grid lg:grid-cols-[1.15fr,0.85fr] gap-16 items-center"
+      >
+        <!-- Left Content -->
+        <div class="reveal">
+          <p
+            class="text-accent-600 dark:text-accent-400 font-semibold tracking-[0.2em] uppercase text-sm mb-5"
+          >
+            Full-Stack Developer • Backend Specialist
+          </p>
+
+          <h1
+            class="font-display text-5xl sm:text-6xl lg:text-7xl font-semibold leading-[1.05] tracking-tight"
+          >
+            Building
+            <span class="italic text-accent-600 dark:text-accent-400">
+              modern web applications
+            </span>
+            that scale from idea to production.
+          </h1>
+
+          <p
+            class="mt-8 max-w-2xl text-lg leading-8 text-ink/70 dark:text-ink-dark/70"
+          >
+            I'm a software engineer with nearly three years of experience
+            building full-stack applications. From intuitive user interfaces to
+            scalable APIs, cloud infrastructure, and containerized deployments,
+            I enjoy creating products that are reliable, performant, and
+            designed for real users.
+          </p>
+
+          <!-- Buttons -->
+          <div class="flex flex-wrap gap-4 mt-10">
+            <a
+              href="projects.html"
+              class="inline-flex items-center gap-2 rounded-full bg-accent-600 px-7 py-3.5 text-paper font-medium transition hover:bg-accent-700 shadow-md"
+            >
+              View Projects
+
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </a>
+
+            <a
+              href="contact.html"
+              class="inline-flex items-center rounded-full border border-ink/10 dark:border-white/10 px-7 py-3.5 font-medium transition hover:bg-ink/5 dark:hover:bg-white/5"
+            >
+              Let's Connect
+            </a>
+          </div>
+
+          <!-- Tech Stack -->
+          <div class="mt-12 flex flex-wrap gap-3">
+            <span
+              class="px-4 py-2 rounded-full bg-ink/5 dark:bg-ink-dark/10 text-sm font-medium"
+            >
+              Laravel
+            </span>
+
+            <span
+              class="px-4 py-2 rounded-full bg-ink/5 dark:bg-ink-dark/10 text-sm font-medium"
+            >
+              React
+            </span>
+
+            <span
+              class="px-4 py-2 rounded-full bg-ink/5 dark:bg-ink-dark/10 text-sm font-medium"
+            >
+              TypeScript
+            </span>
+
+            <span
+              class="px-4 py-2 rounded-full bg-ink/5 dark:bg-ink-dark/10 text-sm font-medium"
+            >
+              Node.js
+            </span>
+
+            <span
+              class="px-4 py-2 rounded-full bg-ink/5 dark:bg-ink-dark/10 text-sm font-medium"
+            >
+              Docker
+            </span>
+
+            <span
+              class="px-4 py-2 rounded-full bg-ink/5 dark:bg-ink-dark/10 text-sm font-medium"
+            >
+              PostgreSQL
+            </span>
+          </div>
+        </div>
+
+        <!-- Right Card -->
+        <div class="reveal relative" style="transition-delay: 150ms">
+          <!-- Soft Accent Glow -->
+          <div
+            class="absolute -top-6 -right-6 h-52 w-52 rounded-full bg-accent-500/10 blur-3xl"
+          ></div>
+
+          <div
+            class="relative overflow-hidden rounded-[2rem] border border-ink/10 dark:border-white/10 bg-ink/5 dark:bg-white/5 shadow-2xl dark:shadow-black/30"
+          >
+            <!-- Portrait -->
+            <img
+              src="assets/images/profile-removebg-preview.png"
+              alt="Portrait"
+              class="h-[650px] w-full object-cover object-top"
+            />
+
+            <!-- Image Overlay -->
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"
+            ></div>
+
+            <!-- Glass Card -->
+            <div
+              class="absolute bottom-6 left-6 right-6 rounded-3xl border border-white/10 bg-white/80 dark:bg-slate-900/70 backdrop-blur-lg p-6"
+            >
+              <div class="flex items-center justify-between">
+                <div>
+                  <h2
+                    class="font-display text-2xl font-semibold text-ink dark:text-white"
+                  >
+                    Your Name
+                  </h2>
+
+                  <p class="mt-1 text-ink/70 dark:text-white/70">
+                    Full-Stack Developer
+                  </p>
+
+                  <p
+                    class="mt-2 text-sm text-ink/60 dark:text-ink-dark/60 italic"
+                  >
+                    "Shipping websites in weeks instead of months."
+                  </p>
+                </div>
+
+                <div
+                  class="h-14 w-14 rounded-2xl bg-accent-600 text-white flex items-center justify-center shadow-lg"
+                >
+                  <svg
+                    class="w-7 h-7"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9.75 17L15 12l-5.25-5"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Stats -->
+              <div class="mt-6 grid grid-cols-3 gap-3">
+                <div
+                  class="rounded-xl border border-black/5 dark:border-white/5 bg-black/5 dark:bg-white/5 py-3 text-center"
+                >
+                  <p
+                    class="text-xs uppercase tracking-wider text-ink/50 dark:text-white/50"
+                  >
+                    Experience
+                  </p>
+
+                  <p
+                    class="mt-1 text-lg font-semibold text-ink dark:text-white"
+                  >
+                    3 Years
+                  </p>
+                </div>
+
+                <div
+                  class="rounded-xl border border-black/5 dark:border-white/5 bg-black/5 dark:bg-white/5 py-3 text-center"
+                >
+                  <p
+                    class="text-xs uppercase tracking-wider text-ink/50 dark:text-white/50"
+                  >
+                    Focus
+                  </p>
+
+                  <p
+                    class="mt-1 text-lg font-semibold text-ink dark:text-white"
+                  >
+                    Full-Stack
+                  </p>
+                </div>
+
+                <div
+                  class="rounded-xl border border-black/5 dark:border-white/5 bg-black/5 dark:bg-white/5 py-3 text-center"
+                >
+                  <p
+                    class="text-xs uppercase tracking-wider text-ink/50 dark:text-white/50"
+                  >
+                    Passion
+                  </p>
+
+                  <p
+                    class="mt-1 text-lg font-semibold text-ink dark:text-white"
+                  >
+                    Building
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Tech stack -->
+      <section class="border-t border-ink/10 dark:border-ink-dark/10 py-24">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="reveal mb-12 max-w-2xl">
+            <h2 class="font-display text-3xl font-semibold mb-3">Tech stack</h2>
+            <p class="text-ink/70 dark:text-ink-dark/70">
+              Languages, frameworks, and infrastructure I reach for day to day —
+              from the browser down to deployment.
+            </p>
+          </div>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
+            <div class="reveal">
+              <h3 class="font-display text-lg font-semibold mb-3">Languages</h3>
+              <ul class="flex flex-wrap gap-2">
+                <li
+                  class="px-3 py-1.5 rounded-full bg-ink/5 dark:bg-ink-dark/10 text-sm font-medium"
+                >
+                  JavaScript
+                </li>
+                <li
+                  class="px-3 py-1.5 rounded-full bg-ink/5 dark:bg-ink-dark/10 text-sm font-medium"
+                >
+                  TypeScript
+                </li>
+                <li
+                  class="px-3 py-1.5 rounded-full bg-ink/5 dark:bg-ink-dark/10 text-sm font-medium"
+                >
+                  PHP
+                </li>
+                <li
+                  class="px-3 py-1.5 rounded-full bg-ink/5 dark:bg-ink-dark/10 text-sm font-medium"
+                >
+                  Python
+                </li>
+                <li
+                  class="px-3 py-1.5 rounded-full bg-ink/5 dark:bg-ink-dark/10 text-sm font-medium"
+                >
+                  Go
+                </li>
+                <li
+                  class="px-3 py-1.5 rounded-full bg-ink/5 dark:bg-ink-dark/10 text-sm font-medium"
+                >
+                  Java (OOP)
+                </li>
+                <li
+                  class="px-3 py-1.5 rounded-full bg-ink/5 dark:bg-ink-dark/10 text-sm font-medium"
+                >
+                  C#
+                </li>
+              </ul>
+            </div>
+            <div class="reveal" style="transition-delay: 60ms">
+              <h3 class="font-display text-lg font-semibold mb-3">Frontend</h3>
+              <ul class="flex flex-wrap gap-2">
+                <li
+                  class="px-3 py-1.5 rounded-full bg-ink/5 dark:bg-ink-dark/10 text-sm font-medium"
+                >
+                  HTML
+                </li>
+                <li
+                  class="px-3 py-1.5 rounded-full bg-ink/5 dark:bg-ink-dark/10 text-sm font-medium"
+                >
+                  CSS
+                </li>
+                <li
+                  class="px-3 py-1.5 rounded-full bg-ink/5 dark:bg-ink-dark/10 text-sm font-medium"
+                >
+                  React
+                </li>
+                <li
+                  class="px-3 py-1.5 rounded-full bg-ink/5 dark:bg-ink-dark/10 text-sm font-medium"
+                >
+                  Next.js
+                </li>
+              </ul>
+            </div>
+            <div class="reveal" style="transition-delay: 120ms">
+              <h3 class="font-display text-lg font-semibold mb-3">
+                Backend &amp; data
+              </h3>
+              <ul class="flex flex-wrap gap-2">
+                <li
+                  class="px-3 py-1.5 rounded-full bg-ink/5 dark:bg-ink-dark/10 text-sm font-medium"
+                >
+                  Node.js
+                </li>
+                <li
+                  class="px-3 py-1.5 rounded-full bg-ink/5 dark:bg-ink-dark/10 text-sm font-medium"
+                >
+                  MySQL
+                </li>
+                <li
+                  class="px-3 py-1.5 rounded-full bg-ink/5 dark:bg-ink-dark/10 text-sm font-medium"
+                >
+                  PostgreSQL
+                </li>
+                <li
+                  class="px-3 py-1.5 rounded-full bg-ink/5 dark:bg-ink-dark/10 text-sm font-medium"
+                >
+                  NoSQL
+                </li>
+              </ul>
+            </div>
+            <div class="reveal" style="transition-delay: 60ms">
+              <h3 class="font-display text-lg font-semibold mb-3">
+                Cloud &amp; deployment
+              </h3>
+              <ul class="flex flex-wrap gap-2">
+                <li
+                  class="px-3 py-1.5 rounded-full bg-ink/5 dark:bg-ink-dark/10 text-sm font-medium"
+                >
+                  AWS Setup
+                </li>
+                <li
+                  class="px-3 py-1.5 rounded-full bg-ink/5 dark:bg-ink-dark/10 text-sm font-medium"
+                >
+                  Vercel
+                </li>
+                <li
+                  class="px-3 py-1.5 rounded-full bg-ink/5 dark:bg-ink-dark/10 text-sm font-medium"
+                >
+                  Render
+                </li>
+                <li
+                  class="px-3 py-1.5 rounded-full bg-ink/5 dark:bg-ink-dark/10 text-sm font-medium"
+                >
+                  Linux
+                </li>
+              </ul>
+            </div>
+            <div class="reveal" style="transition-delay: 120ms">
+              <h3 class="font-display text-lg font-semibold mb-3">
+                Version control
+              </h3>
+              <ul class="flex flex-wrap gap-2">
+                <li
+                  class="px-3 py-1.5 rounded-full bg-ink/5 dark:bg-ink-dark/10 text-sm font-medium"
+                >
+                  Git
+                </li>
+                <li
+                  class="px-3 py-1.5 rounded-full bg-ink/5 dark:bg-ink-dark/10 text-sm font-medium"
+                >
+                  GitHub
+                </li>
+                <li
+                  class="px-3 py-1.5 rounded-full bg-ink/5 dark:bg-ink-dark/10 text-sm font-medium"
+                >
+                  GitLab
+                </li>
+              </ul>
+            </div>
+            <div class="reveal" style="transition-delay: 180ms">
+              <h3 class="font-display text-lg font-semibold mb-3">
+                Testing &amp; QA
+              </h3>
+              <ul class="flex flex-wrap gap-2">
+                <li
+                  class="px-3 py-1.5 rounded-full bg-ink/5 dark:bg-ink-dark/10 text-sm font-medium"
+                >
+                  Playwright (Automation)
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured work -->
+      <section
+        class="border-t border-ink/10 dark:border-ink-dark/10 py-24 bg-ink/[0.02] dark:bg-ink-dark/[0.03]"
+      >
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="flex items-end justify-between mb-10 reveal">
+            <h2 class="font-display text-3xl font-semibold">Selected work</h2>
+            <a
+              href="projects.html"
+              class="text-sm font-medium text-accent-600 dark:text-accent-400 hover:underline"
+              >View all →</a
+            >
+          </div>
+          <div class="grid md:grid-cols-3 gap-6">
+            <button
+              type="button"
+              data-project="patient-portal"
+              class="reveal group w-full text-left rounded-2xl border border-ink/10 dark:border-ink-dark/10 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-500 focus-visible:outline-offset-2"
+            >
+              <div class="h-40 overflow-hidden bg-ink/5 dark:bg-ink-dark/10">
+                <img
+                  src="assets/images/projects/patient-portal.png"
+                  alt="Clinic / Patient Management System dashboard screenshot"
+                  class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-5">
+                <h3 class="font-display text-lg font-semibold mb-1">
+                  Clinic / Patient Management System
+                </h3>
+                <p class="text-sm text-ink/60 dark:text-ink-dark/60">
+                  A healthcare SaaS portal with appointment booking and a
+                  simulated audit-logging system.
+                </p>
+              </div>
+            </button>
+            <button
+              type="button"
+              data-project="component-library"
+              class="reveal group w-full text-left rounded-2xl border border-ink/10 dark:border-ink-dark/10 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-500 focus-visible:outline-offset-2"
+              style="transition-delay: 80ms"
+            >
+              <div class="h-40 overflow-hidden bg-ink/5 dark:bg-ink-dark/10">
+                <img
+                  src="assets/images/projects/component-library.png"
+                  alt="Component library catalog screenshot"
+                  class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-5">
+                <h3 class="font-display text-lg font-semibold mb-1">
+                  Component Library
+                </h3>
+                <p class="text-sm text-ink/60 dark:text-ink-dark/60">
+                  A 12-section accessible vanilla component catalog with
+                  click-to-copy class strings.
+                </p>
+              </div>
+            </button>
+            <button
+              type="button"
+              data-project="saas-landing-page"
+              class="reveal group w-full text-left rounded-2xl border border-ink/10 dark:border-ink-dark/10 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-500 focus-visible:outline-offset-2"
+              style="transition-delay: 160ms"
+            >
+              <div class="h-40 overflow-hidden bg-ink/5 dark:bg-ink-dark/10">
+                <img
+                  src="assets/images/projects/saas-landing-page.png"
+                  alt="Streamline SaaS landing page screenshot"
+                  class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-5">
+                <h3 class="font-display text-lg font-semibold mb-1">
+                  Streamline — SaaS Landing Page
+                </h3>
+                <p class="text-sm text-ink/60 dark:text-ink-dark/60">
+                  A conversion-focused marketing site with a pricing toggle and
+                  testimonial carousel.
+                </p>
+              </div>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience timeline -->
+      <section class="border-t border-ink/10 dark:border-ink-dark/10 py-24">
+        <div class="max-w-3xl mx-auto px-6">
+          <h2 class="font-display text-3xl font-semibold mb-12 reveal">
+            Experience
+          </h2>
+          <!-- PLACEHOLDER: swap in your real company names, titles, and descriptions. -->
+          <ol class="space-y-10">
+            <li class="timeline-item reveal" style="transition-delay: 240ms">
+              <p class="text-sm text-ink/50 dark:text-ink-dark/50 mb-1">
+                March 2026 — Present
+              </p>
+
+              <h3 class="font-semibold text-lg">
+                Software Engineer (System Development)
+              </h3>
+
+              <ul
+                class="list-disc pl-5 mt-2 space-y-2 text-ink/70 dark:text-ink-dark/70"
+              >
+                <li>
+                  Debugged Linux, AWS, EC2, database, and deployment issues,
+                  improving application reliability and production system
+                  stability.
+                </li>
+                <li>
+                  Implemented soft delete functionality across existing
+                  applications, increasing data integrity and enabling safer
+                  data recovery.
+                </li>
+                <li>
+                  Leveraged AI-assisted development tools, including OpenCode,
+                  to accelerate feature delivery and improve debugging
+                  efficiency.
+                </li>
+                <li>
+                  Developed a Python-based web automation solution for Excel
+                  workflows, reducing reliance on UiPath and lowering automation
+                  costs.
+                </li>
+                <li>
+                  Standardized Git workflows and versioning practices, improving
+                  team collaboration and enabling more reliable code management
+                  and releases.
+                </li>
+              </ul>
+            </li>
+            <li class="timeline-item reveal" style="transition-delay: 200ms">
+              <p class="text-sm text-ink/50 dark:text-ink-dark/50 mb-1">
+                October 2025 — March 2026
+              </p>
+
+              <h3 class="font-semibold text-lg">
+                DevOps Support Engineer (Freelance, Part-Time)
+              </h3>
+
+              <ul
+                class="list-disc pl-5 mt-2 space-y-2 text-ink/70 dark:text-ink-dark/70"
+              >
+                <li>
+                  Developed Python Flask applications to simulate server
+                  metrics, validating Prometheus and Grafana monitoring
+                  pipelines.
+                </li>
+                <li>
+                  Maintained and upgraded Netdata on Linux servers, improving
+                  monitoring reliability and streamlining system
+                  troubleshooting.
+                </li>
+                <li>
+                  Implemented OpenTelemetry in Red Hat OpenShift and Kubernetes
+                  environments, enhancing observability and enabling faster
+                  issue diagnosis.
+                </li>
+              </ul>
+            </li>
+            <li class="timeline-item reveal" style="transition-delay: 160ms">
+              <p class="text-sm text-ink/50 dark:text-ink-dark/50 mb-1">
+                January 2024 — September 2025
+              </p>
+
+              <h3 class="font-semibold text-lg">Software Developer</h3>
+
+              <ul
+                class="list-disc pl-5 mt-2 space-y-2 text-ink/70 dark:text-ink-dark/70"
+              >
+                <li>
+                  Developed and maintained web applications using HTML, CSS,
+                  JavaScript, Go, and PHP, supporting consistent weekly
+                  releases.
+                </li>
+                <li>
+                  Improved Linux server reliability by troubleshooting systems,
+                  automating tasks with Bash, debugging Docker environments, and
+                  configuring auto-start services.
+                </li>
+                <li>
+                  Configured and maintained Apache HTTP Server across
+                  development and production environments.
+                </li>
+                <li>
+                  Built a Go backend to manage multiple GoIP SMS gateways for
+                  scalable SMS processing.
+                </li>
+                <li>
+                  Integrated Twilio SMS with Zoho Desk to automate customer
+                  support ticket workflows.
+                </li>
+                <li>
+                  Debugged and resolved issues in open-source components,
+                  improving infrastructure stability and deployment reliability.
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Contact CTA -->
+      <section class="border-t border-ink/10 dark:border-ink-dark/10 py-24">
+        <div class="max-w-3xl mx-auto px-6 text-center reveal">
+          <h2 class="font-display text-3xl sm:text-4xl font-semibold mb-4">
+            Have a project in mind?
+          </h2>
+          <p class="text-ink/70 dark:text-ink-dark/70 mb-8">
+            Open to backend engineering opportunities. Let's talk about what
+            you're building.
+          </p>
+          <a
+            href="contact.html"
+            class="inline-flex items-center gap-2 bg-ink dark:bg-accent-500 text-paper dark:text-ink px-8 py-3.5 rounded-full font-medium hover:opacity-90 transition-opacity focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-500 focus-visible:outline-offset-2"
+          >
+            Start a conversation
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <div class="flex items-center gap-4">
+      <!-- GitHub -->
+      <a
+        href="https://github.com/komodu"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-ink/50 dark:text-ink-dark/50 hover:text-accent-600 dark:hover:text-accent-400 transition-colors"
+        aria-label="GitHub"
+      >
+        <svg
+          class="w-5 h-5"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.269 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.747-1.026 2.747-1.026.546 1.378.202 2.397.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .268.18.58.688.482A10.02 10.02 0 0022 12.017C22 6.484 17.522 2 12 2z"
+          />
+        </svg>
+      </a>
+
+      <!-- Viber -->
+      <a
+        href="viber://chat?number=%2B639925816197"
+        class="text-ink/50 dark:text-ink-dark/50 hover:text-[#7360F2] transition-colors"
+        aria-label="Viber"
+      >
+        <svg
+          class="w-5 h-5"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M12.04 2C7.08 2 3 5.73 3 10.33c0 2.59 1.3 4.93 3.43 6.48L5.4 22l5.37-2.91c.42.05.84.08 1.27.08 4.96 0 9.04-3.73 9.04-8.34S17 2 12.04 2zm4.27 11.41c-.18.5-.95.95-1.5 1.03-.39.05-.89.1-2.88-.72-2.55-1.05-4.2-3.64-4.33-3.81-.13-.17-1.04-1.38-1.04-2.63s.65-1.87.88-2.13c.22-.25.49-.31.65-.31.16 0 .33 0 .47.01.15.01.35-.06.55.42.21.5.71 1.72.77 1.85.06.13.1.28.02.45-.08.17-.12.28-.24.43-.12.15-.25.34-.36.45-.12.12-.25.25-.11.5.14.25.63 1.03 1.36 1.66.93.81 1.71 1.06 1.96 1.18.24.12.39.1.53-.06.14-.17.6-.7.76-.94.16-.24.32-.2.54-.12.22.08 1.39.66 1.63.78.24.12.4.18.46.28.06.1.06.59-.12 1.09z"
+          />
+        </svg>
+      </a>
+
+      <!-- LinkedIn -->
+      <a
+        href="https://linkedin.com/in/willdagli"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-ink/50 dark:text-ink-dark/50 hover:text-accent-600 dark:hover:text-accent-400 transition-colors"
+        aria-label="LinkedIn"
+      >
+        <svg
+          class="w-5 h-5"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 11.001-4.124 2.062 2.062 0 01-.001 4.124zM7.114 20.452H3.56V9h3.554v11.452z"
+          />
+        </svg>
+      </a>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
