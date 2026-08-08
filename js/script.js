@@ -4,19 +4,51 @@
 // Single source of truth for the project-details modal (see projectModal below).
 // Cards on any page just need data-project="<key>" — no HTML duplication needed.
 const PROJECTS = {
+  // ── Featured — primary, current full-stack + automation work ──────────
+  "service-ticketing": {
+    title: "Service Ticketing System",
+    image: "assets/images/projects/service-ticketing-system.svg",
+    description:
+      "A full-stack service ticketing platform designed to streamline issue reporting, ticket management, assignment, tracking, and resolution.",
+    features: [
+      "Centralized issue reporting and ticket intake",
+      "Assignment and status tracking across the full ticket lifecycle",
+      "Built as a full-stack, database-driven web application",
+    ],
+    tags: ["Full-Stack Development", "Database-Driven", "Ticket Management"],
+    featured: true,
+    categories: ["featured", "fullstack"],
+  },
   "patient-portal": {
-    title: "Clinic / Patient Management System",
+    title: "Patient Portal",
     image: "assets/images/projects/patient-portal.png",
     description:
-      "A full patient-facing healthcare portal: dashboard, profile management, and appointment booking through a Google Calendar–style scheduler with live availability. A separate admin surface adds a simulated, enterprise-style audit-logging dashboard with charts and exportable reports.",
+      "A patient-focused web application for managing healthcare-related information, workflows, and interactions through a centralized digital portal.",
     features: [
-      "Interactive booking modal with doctor availability and time slots",
-      "Simulated audit-logging system with a patient-facing activity timeline",
-      "Separate admin dashboard with Chart.js analytics and CSV/PDF export",
-      "Full dark mode and mobile-responsive layout",
+      "Centralized portal for healthcare-related information",
+      "Streamlined patient workflows and interactions",
+      "Built as a full-stack, database-driven web application",
     ],
-    tags: ["Vanilla JS", "Tailwind", "Audit logging"],
+    tags: ["Full-Stack Development", "Healthcare Workflows", "Database-Driven"],
+    featured: true,
+    categories: ["featured", "fullstack"],
   },
+  "hr-management-system": {
+    title: "HR Management System",
+    image: "assets/images/projects/hr-management-system.svg",
+    description:
+      "A full-stack HR platform designed to organize employee information, HR workflows, and internal management processes.",
+    features: [
+      "Centralized employee information management",
+      "Structured HR workflows and internal processes",
+      "Built as a full-stack, database-driven web application",
+    ],
+    tags: ["Full-Stack Development", "HR Workflows", "Database-Driven"],
+    featured: true,
+    categories: ["featured", "fullstack"],
+  },
+
+  // ── Other projects — earlier full-stack / UI builds ────────────────────
   "component-library": {
     title: "Component Library",
     image: "assets/images/projects/component-library.png",
@@ -29,6 +61,7 @@ const PROJECTS = {
       "Consistent design tokens shared across every component",
     ],
     tags: ["Accessibility", "Tailwind", "Design tokens"],
+    categories: ["design"],
   },
   "saas-landing-page": {
     title: "Streamline — SaaS Landing Page",
@@ -42,6 +75,7 @@ const PROJECTS = {
       "Scroll-triggered entrance animations",
     ],
     tags: ["Conversion UX", "Tailwind", "Vanilla JS"],
+    categories: ["fullstack", "design"],
   },
   "admin-dashboard": {
     title: "Enterprise Admin Dashboard",
@@ -55,6 +89,7 @@ const PROJECTS = {
       "Notification and activity feed panels",
     ],
     tags: ["Chart.js", "Dark mode", "Tailwind"],
+    categories: ["fullstack", "design"],
   },
   "expense-tracker": {
     title: "ExpenseFlow — Finance Tracker",
@@ -68,6 +103,7 @@ const PROJECTS = {
       "Responsive off-canvas mobile navigation",
     ],
     tags: ["Chart.js", "Tailwind", "Multi-page"],
+    categories: ["fullstack"],
   },
   "animation-showcase": {
     title: "Animation Showcase",
@@ -81,6 +117,104 @@ const PROJECTS = {
       "Click-to-copy code snippets for every demo",
     ],
     tags: ["WAAPI", "CSS Animation", "Accessibility"],
+    categories: ["design"],
+  },
+
+  // ── Other projects — imported from the previous portfolio (automation) ─
+  "prev-calculator": {
+    title: "Calculator Web Application",
+    image: "assets/images/projects/previous-portfolio/prev-calculator.png",
+    description: "A calculator web application built with HTML, CSS, and vanilla JavaScript.",
+    features: [
+      "Client-side calculation logic in vanilla JavaScript",
+      "Responsive layout styled with HTML & CSS",
+      "Lightweight, dependency-free web app",
+    ],
+    tags: ["HTML", "JavaScript", "CSS"],
+    categories: ["fullstack"],
+  },
+  "prev-make-drive-sort": {
+    title: "Auto Sort Attachment to Google Drive",
+    image:
+      "assets/images/projects/previous-portfolio/prev-make-drive-sort.png",
+    description:
+      "An automated workflow in Make.com that intelligently processes incoming email attachments, analyzes their contents, and dynamically renames and sorts files into organized Google Drive folders. Content-based logic identifies key details such as document type, sender, or date, ensuring accurate naming and storage — significantly reducing manual file handling and improving data organization.",
+    features: [
+      "Content-based logic to identify document type, sender, and date",
+      "Dynamic file renaming and automatic Google Drive folder sorting",
+      "Reduced manual file handling and improved data organization",
+    ],
+    tags: ["Make", "JavaScript"],
+    categories: ["automation"],
+  },
+  "prev-make-xero-sheets": {
+    title: "Xero-to-Google Sheets Financial Data Automation",
+    image:
+      "assets/images/projects/previous-portfolio/prev-make-xero-sheets.png",
+    description:
+      "An automated workflow that exports account transactions from Xero, syncs the data in real time to Google Sheets for tracking and analysis, and simultaneously saves a CSV copy to Asana for team reference and task management — streamlining financial reporting and eliminating repetitive manual exports.",
+    features: [
+      "Real-time export of Xero account transactions to Google Sheets",
+      "Automatic CSV copy saved to Asana for team reference",
+      "Eliminated repetitive manual financial exports",
+    ],
+    tags: ["Make", "Xero", "Google Sheets"],
+    categories: ["automation"],
+  },
+  "prev-zapier-video-blog": {
+    title: "AI-Powered Video-to-Blog Content Automation",
+    image:
+      "assets/images/projects/previous-portfolio/prev-zapier-video-blog.png",
+    description:
+      "A Zapier automation that generates social media blog posts directly from MP4 files stored in Google Drive. The workflow leverages Zapier AI to transcribe video content, then automatically creates an engaging blog title and post based on the extracted text — enabling consistent, AI-driven publishing across social platforms.",
+    features: [
+      "AI transcription of MP4 video files from Google Drive",
+      "Automatic blog title and post generation from transcripts",
+      "End-to-end automation for consistent AI-driven publishing",
+    ],
+    tags: ["Zapier", "Google Drive", "Artificial Intelligence", "Social Media"],
+    categories: ["automation"],
+  },
+  "prev-zapier-asana-gmail": {
+    title: "Automated Customer Status and Payment Notification System",
+    image:
+      "assets/images/projects/previous-portfolio/prev-zapier-asana-gmail.png",
+    description:
+      "A Zapier automation connecting Asana with Gmail to automate customer status and payment notifications. The workflow tracks each customer's journey in Asana — from initial engagement through payment and closure — using conditional logic to trigger personalized email updates whenever a status changes, minimizing manual follow-ups.",
+    features: [
+      "Tracks the customer journey in Asana from engagement to closure",
+      "Conditional logic triggers personalized Gmail notifications",
+      "Reduced manual follow-ups throughout the sales process",
+    ],
+    tags: ["Asana", "Zapier", "Google Mail"],
+    categories: ["automation"],
+  },
+  "prev-n8n-forms-archive": {
+    title: "Google Forms Data Integration and Archiving Automation",
+    image:
+      "assets/images/projects/previous-portfolio/prev-n8n-forms-archive.png",
+    description:
+      "An automated data pipeline connecting Google Forms, Google Sheets, Airtable, and a MySQL database using n8n. On submission, responses are recorded in Google Sheets, processed through n8n, added to Airtable for active tracking, and archived in MySQL for long-term storage — improving data consistency and eliminating manual entry.",
+    features: [
+      "Automated data pipeline from Google Forms through n8n",
+      "Live tracking in Airtable with long-term archiving in MySQL",
+      "Eliminated manual data entry and improved consistency",
+    ],
+    tags: ["n8n", "Airtable", "Google Sheets", "Google Forms", "MySQL"],
+    categories: ["automation"],
+  },
+  "prev-n8n-weather": {
+    title: "AI-Powered Daily Weather Forecast Content Automation",
+    image: "assets/images/projects/previous-portfolio/prev-n8n-weather.png",
+    description:
+      "An AI-driven automation that generates and publishes daily weather forecast content for social media. The workflow retrieves weather data, uses AI to create engaging captions paired with unique daily quotes and images, checks whether content was previously used to avoid repetition, then composes the final post ready for publication.",
+    features: [
+      "AI-generated captions paired with daily quotes and images",
+      "Duplicate-check logic to avoid repeating quotes or images",
+      "Automated, consistent daily social-media publishing pipeline",
+    ],
+    tags: ["OpenWeatherMap API", "Artificial Intelligence", "n8n"],
+    categories: ["automation"],
   },
 };
 
