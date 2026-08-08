@@ -49,20 +49,6 @@ const PROJECTS = {
   },
 
   // ── Other projects — earlier full-stack / UI builds ────────────────────
-  "component-library": {
-    title: "Component Library",
-    image: "assets/images/projects/component-library.png",
-    description:
-      "A living reference of 12 component categories — buttons, cards, modals, tabs, toasts, and more — each variant paired with a click-to-copy Tailwind class string, built to be dropped into other projects without a framework.",
-    features: [
-      "12 component categories with multiple variants each",
-      "Click-to-copy class strings for fast reuse",
-      "Full keyboard support and ARIA roles throughout",
-      "Consistent design tokens shared across every component",
-    ],
-    tags: ["Accessibility", "Tailwind", "Design tokens"],
-    categories: ["design"],
-  },
   "saas-landing-page": {
     title: "Streamline — SaaS Landing Page",
     image: "assets/images/projects/saas-landing-page.png",
@@ -105,21 +91,6 @@ const PROJECTS = {
     tags: ["Chart.js", "Tailwind", "Multi-page"],
     categories: ["fullstack"],
   },
-  "animation-showcase": {
-    title: "Animation Showcase",
-    image: "assets/images/projects/animation-showcase.png",
-    description:
-      "A hands-on gallery of thirteen animation techniques, each isolated in its own demo with an inline code snippet — from CSS-only tricks to Web Animations API-driven progress rings.",
-    features: [
-      "13 self-contained animation techniques with visible source",
-      "Magnetic buttons, WAAPI progress rings, and split-text reveals",
-      "Full prefers-reduced-motion support throughout",
-      "Click-to-copy code snippets for every demo",
-    ],
-    tags: ["WAAPI", "CSS Animation", "Accessibility"],
-    categories: ["design"],
-  },
-
   // ── Other projects — imported from the previous portfolio (automation) ─
   "prev-calculator": {
     title: "Calculator Web Application",
